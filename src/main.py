@@ -42,9 +42,8 @@ class Client(discord.Client):
     async def on_ready(self):
         await self.sync_commands()
         
-        # 用途が明確かつ狭いのでハードコーティング
-        self.target_guild = self.get_guild(os.getenv('STOCK_CONTROL_GUILD'))
-        self.target_channel = self.target_guild.get_channel(os.getenv('STOCK_CONTROL_CHANNEL'))
+        self.target_guild = self.get_guild(int(os.getenv('STOCK_CONTROL_GUILD')))
+        self.target_channel = self.target_guild.get_channel(int(os.getenv('STOCK_CONTROL_CHANNEL')))
         
         # クライアント再起動時は前のメッセージを削除
         async for message in self.target_channel.history(limit=200):
