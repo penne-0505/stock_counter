@@ -44,6 +44,6 @@ class DecreaseButton(discord.ui.Button):
 
 class StockManageView(discord.ui.View):
     def __init__(self):
-        super().__init__(timeout=120)
+        super().__init__(timeout=None)
         self.add_item(IncreaseButton())
         self.add_item(DecreaseButton())
