@@ -178,14 +178,14 @@ async def calc_total_sales(interaction: discord.Interaction):
     # 売上を計算
     sales = {}
     for stock in all_stocks:
-        sales[stock.group + stock.detail] = stock.count * stock.price
+        sales[f'{stock.group} ({stock.detail})'] = stock.count * stock.price
     
     # 総売上を計算
     total_sales = sum(sales.values())
     sales['total_sales'] = total_sales
     
     # 売上リストを作成
-    sales_list = '\n'.join([f'{key}: {value}円' for key, value in sales.items() if key != 'total_sales'])
+    sales_list = '\n- '.join([f'{key}:\n    - {value}円' for key, value in sales.items() if key != 'total_sales'])
     sales_list += f'\n\n**総売上: __{total_sales}__円**'
 
     # メッセージを送信
