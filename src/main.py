@@ -207,6 +207,8 @@ async def sort_by_count(interaction: discord.Interaction):
     all_stocks = await db_manager.get_all_stock()
     sorted_stocks = await sort_stocks_by_count(all_stocks)
     
+    await interaction.response.send_message('並べ替えています...', ephemeral=True, delete_after=15)
+    
     # メッセージを削除
     async for message in client.target_channel.history(limit=200):
         await message.delete()
@@ -228,8 +230,6 @@ async def sort_by_count(interaction: discord.Interaction):
         )
         await client.target_channel.send('‎', silent=True)
         await asyncio.sleep(0.5)
-    
-    await interaction.response.send_message('商品は売上個数順に並べ替えられました', ephemeral=True)
 
 
 @tree.command(
@@ -242,6 +242,8 @@ async def sort_by_price(interaction: discord.Interaction):
     all_stocks = await db_manager.get_all_stock()
     sorted_stocks = await sort_stocks_by_price(all_stocks)
     
+    await interaction.response.send_message('並べ替えています...', ephemeral=True, delete_after=15)
+    
     # メッセージを削除
     async for message in client.target_channel.history(limit=200):
         await message.delete()
@@ -263,8 +265,6 @@ async def sort_by_price(interaction: discord.Interaction):
         )
         await client.target_channel.send('‎', silent=True)
         await asyncio.sleep(0.5)
-    
-    await interaction.response.send_message('商品は価格順に並べ替えられました', ephemeral=True)
 
 
 @tree.command(
@@ -277,6 +277,8 @@ async def sort_by_group(interaction: discord.Interaction):
     all_stocks = await db_manager.get_all_stock()
     sorted_stocks = await sort_stocks_by_group(all_stocks)
     
+    await interaction.response.send_message('並べ替えています...', ephemeral=True, delete_after=15)
+    
     # メッセージを削除
     async for message in client.target_channel.history(limit=200):
         await message.delete()
@@ -298,8 +300,6 @@ async def sort_by_group(interaction: discord.Interaction):
         )
         await client.target_channel.send('‎', silent=True)
         await asyncio.sleep(0.5)
-    
-    await interaction.response.send_message('商品はグループ順に並べ替えられました', ephemeral=True)
 
 
 
