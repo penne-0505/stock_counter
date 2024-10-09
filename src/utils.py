@@ -74,6 +74,7 @@ class CommandsTranslator(discord.app_commands.Translator):
                 'sort_by_group': 'グループでソート',
                 'sort_by_count': '個数でソート',
                 'sort_by_price': '価格でソート',
+                'calc_total_sales': '売上の計算',
                 'Ping the bot.': 'ボットにPingを送信します。',
                 'Add a new stock to the stock list.': '商品リストに新しい商品を追加します。',
                 'Remove a stock from the stock list.': '商品リストから商品を削除します。',
@@ -82,6 +83,7 @@ class CommandsTranslator(discord.app_commands.Translator):
                 'Sort all stocks by group.': '全商品をグループでソートします。',
                 'Sort all stocks by count.': '全商品を個数でソートします。',
                 'Sort all stocks by price.': '全商品を価格でソートします。',
+                'Calculate total sales.': '売上を計算します。',
             },
             'en-US': {
                 'ping': 'ping',
@@ -92,6 +94,7 @@ class CommandsTranslator(discord.app_commands.Translator):
                 'sort_by_group': 'sort_by_group',
                 'sort_by_count': 'sort_by_count',
                 'sort_by_price': 'sort_by_price',
+                'calc_total_sales': 'calc_total_sales',
                 'Ping the bot.': 'Ping the bot.',
                 'Add a new stock to the stock list.': 'Add a new stock to the stock list.',
                 'Remove a stock from the stock list.': 'Remove a stock from the stock list.',
@@ -100,6 +103,7 @@ class CommandsTranslator(discord.app_commands.Translator):
                 'Sort all stocks by group.': 'Sort all stocks by group.',
                 'Sort all stocks by count.': 'Sort all stocks by count.',
                 'Sort all stocks by price.': 'Sort all stocks by price.',
+                'Calculate total sales.': 'Calculate total sales.',
             },
         }
         
