@@ -10,6 +10,7 @@ from utils import Stock
 
 class DBManager(metaclass=utils.Singleton):
     def __init__(self):
+        # firebaseを使わない場合は環境変数に直接、値を入れる
         url = os.getenv("DS_BOT_STOCK_CONTROL_DB_CRED")
         self.cred = credentials.Certificate(requests.get(url).json())
         firebase_admin.initialize_app(self.cred)
